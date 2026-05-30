@@ -1,0 +1,3 @@
+enum ERoles {
+  user, admin
+}
