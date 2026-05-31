@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter_finance_app/core/di/i_feature_module.dart';
 import 'package:flutter_finance_app/core/network/app_http_client.dart';
 import 'package:flutter_finance_app/core/network/auth_interceptor.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_local_storage.dart';
@@ -8,23 +9,29 @@ import 'package:flutter_finance_app/core/session/session_manager.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
 
-class CoreModule {
-  void register(GetIt getIt) {
+class CoreModule implements IFeatureModule{
 
-    getIt.registerLazySingleton<Dio>(() => Dio(),);
+  final GetIt _getIt;
 
-    getIt.registerLazySingleton<FlutterSecureStorage>(
+  CoreModule(this._getIt);
+
+  @override
+  void register() {
+
+    _getIt.registerLazySingleton<Dio>(() => Dio(),);
+
+    _getIt.registerLazySingleton<FlutterSecureStorage>(
       () => FlutterSecureStorage(),
     );
 
-    getIt.registerLazySingleton<ILocalStorage>(
-      () => LocalStorageImpl(getIt<FlutterSecureStorage>()),
+    _getIt.registerLazySingleton<ILocalStorage>(
+      () => LocalStorageImpl(_getIt<FlutterSecureStorage>()),
     );
 
-    getIt.registerLazySingleton<ISessionManager>(() => SessionManager(),);
+    _getIt.registerLazySingleton<ISessionManager>(() => SessionManager(),);
 
-    getIt.registerLazySingleton<AuthInterceptor>(() => AuthInterceptor(getIt<ISessionManager>()),);
+    _getIt.registerLazySingleton<AuthInterceptor>(() => AuthInterceptor(_getIt<ISessionManager>()),);
 
-    getIt.registerLazySingleton<AppHttpClient>(() => AppHttpClient(getIt<Dio>(), getIt<AuthInterceptor>()),);
+    _getIt.registerLazySingleton<AppHttpClient>(() => AppHttpClient(_getIt<Dio>(), _getIt<AuthInterceptor>()),);
   }
 }

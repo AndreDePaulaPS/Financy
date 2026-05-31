@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_finance_app/core/di/app_module.dart';
+import 'package:get_it/get_it.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  AppModule.register(GetIt.I);
   runApp(const MainApp());
 }
 
