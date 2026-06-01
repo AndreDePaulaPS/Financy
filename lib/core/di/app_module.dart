@@ -1,6 +1,7 @@
 import 'package:flutter_finance_app/core/core_module.dart';
 import 'package:flutter_finance_app/feature/auth/auth_module.dart';
 import 'package:flutter_finance_app/feature/home/home_module.dart';
+import 'package:flutter_finance_app/feature/splash/splash_module.dart';
 import 'package:get_it/get_it.dart';
 
 class AppModule {
@@ -9,8 +10,10 @@ class AppModule {
   static Future<void> register(
   ) async{
     CoreModule(injector).register();
+    SplashModule(injector).register();
     AuthModule(injector).register();
     HomeModule(injector).register();
+
   }
 
   static T get<T extends Object>() {

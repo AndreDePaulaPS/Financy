@@ -8,7 +8,6 @@ class LoginProvider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ViewModelProvider<LoginViewModel>(
-    child: LoginView(), );
+    return ViewModelProvider<LoginViewModel>(child: LoginView());
   }
 }

@@ -16,11 +16,13 @@ class SessionDto {
   });
 
   factory SessionDto.fromJson(Map<String, dynamic> json) {
+    final user = json["user"] is String? jsonDecode(json["user"]): json["user"];
+
     return SessionDto(
       token: json["token"],
       refreshToken: json["refreshToken"],
       expiresIn: json["expiresIn"],
-      user: UserSessionDto.fromJson(json["user"]),
+      user: UserSessionDto.fromJson(user),
     );
   }
 

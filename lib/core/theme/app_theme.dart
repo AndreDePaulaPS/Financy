@@ -56,10 +56,7 @@ class AppTheme {
 
       inputDecorationTheme:
           InputDecorationTheme(
-        filled: true,
-
-        fillColor:
-            AppColors.greenSecondary,
+        
 
         border: OutlineInputBorder(
           borderRadius:

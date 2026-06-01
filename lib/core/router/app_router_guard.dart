@@ -18,7 +18,7 @@ class AppRouterGuard {
         AppRouterKey.auth;
 
     if (!hasSession && !isLogin) {
-      return AppRouterKey.auth;
+      return AppRouterKey.splash;
     }
 
     if (hasSession && isLogin) {

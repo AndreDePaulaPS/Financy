@@ -15,9 +15,11 @@ class AppColors {
 
   static const expense = Color(0xffFF5252);
 
-  static const background = Color(0xffF7FDFC);
+  static const background = Color.fromARGB(255, 232, 252, 248);
 
   static const textPrimary = Color(0xff1C1C1C);
 
   static const textSecondary = Color(0xff8F9BA8);
+
+  
 }
