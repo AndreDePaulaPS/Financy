@@ -1,4 +1,4 @@
-import 'package:flutter_finance_app/core/exception/app_exception.dart';
+import 'package:flutter_finance_app/shared/exception/app_exception.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
 import 'package:flutter_finance_app/core/session/domain/entities/session.dart';
 import 'package:flutter_finance_app/feature/home/domain/contract/i_home_repository.dart';

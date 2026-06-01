@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_finance_app/core/exception/app_exception.dart';
+import 'package:flutter_finance_app/shared/exception/app_exception.dart';
 import 'package:flutter_finance_app/core/session/data/dto/session_dto.dart';
 import 'package:flutter_finance_app/feature/auth/data/dto/auth_request_dto.dart';
 import 'package:flutter_finance_app/feature/auth/domain/contract/i_auth_service.dart';
