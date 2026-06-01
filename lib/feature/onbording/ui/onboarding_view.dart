@@ -1,6 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_finance_app/core/router/app_router_key.dart';
 import 'package:flutter_finance_app/core/theme/app_colors.dart';
+import 'package:flutter_finance_app/shared/widget/button/app_button.dart';
+import 'package:go_router/go_router.dart';
 
 class OnboardingView extends StatelessWidget {
   const OnboardingView({super.key});
@@ -52,7 +55,7 @@ class OnboardingView extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  ElevatedButton(onPressed: () {}, child: Text("Get Started")),
+                 AppButton(label: "Get Started", onTap: () => context.go(AppRouterKey.auth),),
                   RichText(
                     text: TextSpan(
                       children: [
