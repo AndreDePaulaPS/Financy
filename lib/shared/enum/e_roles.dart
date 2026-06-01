@@ -1,3 +1,5 @@
 enum ERoles {
-  user, admin
+  user, admin, manager
 }
+
+

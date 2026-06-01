@@ -18,4 +18,12 @@ class SessionManager implements ISessionManager {
   Future<void> save(Session session) async {
     _session = session;
   }
+
+  @override
+  bool get isLogged  {
+    if(loadSession() != null){
+      return true;
+    }
+    return false;
+  }
 }

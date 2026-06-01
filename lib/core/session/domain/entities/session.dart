@@ -3,7 +3,7 @@ import 'package:flutter_finance_app/core/session/domain/entities/user_session.da
 class Session {
   final String token;
   final String refreshToken;
-  final String expiresIn;
+  final int expiresIn;
   final UserSession user;
   
 

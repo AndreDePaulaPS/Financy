@@ -14,7 +14,7 @@ class AppHttpClient {
 
   BaseOptions _configBase(){
     return BaseOptions(
-      baseUrl: "http://10.0.2.2:3000",
+      baseUrl: "http://10.0.2.2:3001",
       connectTimeout: Duration(seconds: 5),
       receiveTimeout: Duration(seconds: 5)
     );

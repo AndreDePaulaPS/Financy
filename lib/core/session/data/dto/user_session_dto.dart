@@ -1,10 +1,15 @@
+import 'dart:convert';
+
+import 'package:flutter_finance_app/shared/enum/e_roles.dart';
+import 'package:flutter_finance_app/shared/extension/e_roles_extension.dart';
+
 class UserSessionDto {
   final String id;
   final String name;
   final String email;
   final String avatarUrl;
   final bool premium;
-  final List<Enum> roles;
+  final List<ERoles> roles;
 
   UserSessionDto({
     required this.id,
@@ -21,7 +26,7 @@ class UserSessionDto {
         "email": email,
         "avatarUrl": avatarUrl,
         "premium": premium,
-        "roles": roles,
+        "roles": roles.map((e) => e.value,).toList(),
       };
 
   factory UserSessionDto.fromJson(Map<String, dynamic> json) {
@@ -31,7 +36,9 @@ class UserSessionDto {
       email: json["email"],
       avatarUrl: json["avatarUrl"],
       premium: json["premium"],
-      roles: List<Enum>.from(json["roles"] ?? []),
+      roles:(json["roles"] as List).map((e) =>(e as String).toRole(),).toList(),
     );
   }
+
+  String get json => jsonEncode(toJson());
 }

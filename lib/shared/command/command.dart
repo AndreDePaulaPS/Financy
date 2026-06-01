@@ -5,9 +5,12 @@ import 'package:flutter_finance_app/shared/result/result.dart';
 class Command<S, E extends Exception> extends ChangeNotifier {
   ECommandState _state = ECommandState.idle;
 
-  Result<S, E>? _data;
+  S? _success;
 
-  Result<S, E>? get data => _data;
+  S? get success => _success;
+
+  E? _failure;
+  E? get failure => _failure;
 
   bool get isIdle => _state == ECommandState.idle;
   bool get isLoading => _state == ECommandState.loading;
@@ -20,26 +23,25 @@ class Command<S, E extends Exception> extends ChangeNotifier {
   Future<void> execute(Future<Result<S, E>> Function() action)async{
     if(isLoading) return;
 
-    _data = null;
+    _success = null;
+    _failure = null;
 
     _state = ECommandState.loading;
     notifyListeners();
 
     final result = await action();
 
-    _data = result;
-
     result.when(
       success: (success) {
         _state = ECommandState.success;
-        return;
+        _success = success;
+        
       }, 
       failure: (failure) {
         _state = ECommandState.failure;
-        return ;
+        _failure = failure;
         
       },);
-    
     notifyListeners();  
   }
 

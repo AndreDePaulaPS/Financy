@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_finance_app/core/di/app_module.dart';
-import 'package:get_it/get_it.dart';
+import 'package:flutter_finance_app/app_initializer.dart';
+import 'package:flutter_finance_app/core/router/app_router.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  AppModule.register(GetIt.I);
+  await AppInitializer.init();
   runApp(const MainApp());
 }
 
@@ -13,12 +13,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+    return MaterialApp.router(
+      routerConfig: AppRouter.route,
+      
     );
   }
 }

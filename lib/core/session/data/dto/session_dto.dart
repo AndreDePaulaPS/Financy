@@ -1,9 +1,11 @@
+import 'dart:convert';
+
 import 'package:flutter_finance_app/core/session/data/dto/user_session_dto.dart';
 
 class SessionDto {
   final String token;
   final String refreshToken;
-  final String expiresIn;
+  final int expiresIn;
   final UserSessionDto user;
 
   SessionDto({
@@ -27,7 +29,9 @@ class SessionDto {
       "token": token,
       "refreshToken": refreshToken,
       "expiresIn": expiresIn,
-      "user": user.toJson,
+      "user": user.json,
     };
   }
+
+  String get json => jsonEncode(toJson());
 }
