@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_finance_app/core/router/app_router_key.dart';
 import 'package:flutter_finance_app/feature/auth/ui/login/login_view_model.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class LoginView extends StatefulWidget {
@@ -42,8 +44,12 @@ class _LoginViewState extends State<LoginView> {
                 viewModel.loginCommand.isLoading
                     ? CircularProgressIndicator()
                     : ElevatedButton(
-                        onPressed: () {
-                          viewModel.login();
+                        onPressed: () async {
+                         await viewModel.login();
+                         if(!context.mounted) return;
+                         if(viewModel.loginCommand.isSuccess){
+                          context.go(AppRouterKey.home);
+                         }
                         },
                         child: Text("Login"),
                       ),
