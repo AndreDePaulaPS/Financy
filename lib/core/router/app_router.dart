@@ -15,7 +15,7 @@ class AppRouter {
 
     return GoRouter(
       initialLocation: AppRouterKey.splash,
-      // redirect: (context, state) => guard.redirect(state),
+      redirect: (context, state) => guard.redirect(state),
       routes: [
         GoRoute(
           path: AppRouterKey.splash,
