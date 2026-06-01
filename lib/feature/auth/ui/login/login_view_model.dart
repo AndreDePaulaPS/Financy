@@ -11,6 +11,8 @@ class LoginViewModel extends ChangeNotifier {
   final email = TextEditingController();
   final password = TextEditingController();
 
+  bool isTextNotVisible = true;
+
 
   LoginViewModel(this._repository){
     loginCommand.addListener(notifyListeners);
@@ -24,6 +26,12 @@ class LoginViewModel extends ChangeNotifier {
     email.dispose();
     password.dispose();
     super.dispose();
+  }
+
+
+  void tooglePassword() {
+    isTextNotVisible = !isTextNotVisible;
+    notifyListeners();
   }
 
 

@@ -7,21 +7,19 @@ class AppRouterGuard {
 
   AppRouterGuard(this.sessionManager);
 
-  String? redirect(
-    GoRouterState state,
-  ) {
-    final hasSession =
-        sessionManager.loadSession() != null;
+  String? redirect(GoRouterState state) {
+    final hasSession = sessionManager.loadSession() != null;
 
-    final isLogin =
-        state.matchedLocation ==
-        AppRouterKey.auth;
+    final isPublic =
+        state.matchedLocation == AppRouterKey.auth ||
+        state.matchedLocation == AppRouterKey.splash ||
+        state.matchedLocation == AppRouterKey.onboarding;
 
-    if (!hasSession && !isLogin) {
+    if (!hasSession && !isPublic) {
       return AppRouterKey.splash;
     }
 
-    if (hasSession && isLogin) {
+    if (hasSession && isPublic) {
       return AppRouterKey.home;
     }
 
