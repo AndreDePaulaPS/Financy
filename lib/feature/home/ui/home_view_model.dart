@@ -6,6 +6,7 @@ import 'package:flutter_finance_app/shared/command/command.dart';
 class HomeViewModel extends ChangeNotifier{
   final IHomeRepository _homeRepository;
   late Command<Session, Exception> loadUserCommand = Command();
+  late Command<void, Exception> clearSessionCommand = Command();
 
   HomeViewModel(this._homeRepository);
 
@@ -14,6 +15,10 @@ class HomeViewModel extends ChangeNotifier{
     await loadUserCommand.execute(() => _homeRepository.loadUser(),);
 
     notifyListeners();
+  }
+
+  Future<void> clearSession()async{
+    await clearSessionCommand.execute(_homeRepository.clearSession);
   }
 
 

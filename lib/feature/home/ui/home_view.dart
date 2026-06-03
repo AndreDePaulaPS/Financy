@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_finance_app/core/router/app_router_key.dart';
 import 'package:flutter_finance_app/feature/home/ui/home_view_model.dart';
+import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 class HomeView extends StatefulWidget {
@@ -35,7 +37,14 @@ class _HomeViewState extends State<HomeView> {
           children: [
             Text("${vm.loadUserCommand.success?.user.name}"),
             Text("${vm.loadUserCommand.success?.user.avatarUrl}"),
-            Text("${vm.loadUserCommand.success?.user.email}")
+            Text("${vm.loadUserCommand.success?.user.email}"),
+            ElevatedButton(onPressed: () async {
+              await vm.clearSession();
+              if(!context.mounted) return;
+              context.go(AppRouterKey.auth);
+
+              
+            }, child: Text("Logoff"))
 
           ],
         ),

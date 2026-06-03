@@ -3,4 +3,5 @@ import 'package:flutter_finance_app/shared/result/result.dart';
 
 abstract interface class IHomeRepository {
   Future<Result<Session, Exception>> loadUser();
+  Future<Result<void, Exception>> clearSession();
 }
