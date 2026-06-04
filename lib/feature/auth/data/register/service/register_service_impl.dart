@@ -25,8 +25,8 @@ class RegisterServiceImpl implements IRegisterService {
       }
 
       return Failure(AppException(mensagem: response.data));
-    } on DioException catch (e) {
-      return Failure(AppException(mensagem: e.toString()));
+    } on DioException catch (_) {
+      return Failure(AppException(mensagem: "Oops, Something went wrong!"));
     }
   }
 }

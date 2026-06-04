@@ -6,6 +6,7 @@ import 'package:flutter_finance_app/feature/auth/ui/register/register_view_model
 import 'package:flutter_finance_app/shared/validator/email_validator.dart';
 import 'package:flutter_finance_app/shared/validator/password_validator.dart';
 import 'package:flutter_finance_app/shared/validator/required_validator.dart';
+import 'package:flutter_finance_app/shared/widget/bottom_sheet/app_bottom_sheet.dart';
 import 'package:flutter_finance_app/shared/widget/button/app_button.dart';
 import 'package:flutter_finance_app/shared/widget/text_form/app_text_form_fiel.dart';
 import 'package:go_router/go_router.dart';
@@ -23,16 +24,19 @@ class _RegisterViewState extends State<RegisterView> {
 
   void singUp(RegisterViewModel vm, BuildContext context) async {
     await vm.register();
-    if(!context.mounted) return;
-    if(vm.registerCommand.isSuccess){
+    if (!context.mounted) return;
+    if (vm.registerCommand.isSuccess) {
       context.go(AppRouterKey.home);
       return;
     }
-    if(vm.registerCommand.isFailure){
-
+    if (vm.registerCommand.isFailure) {
+      appShowBottomSheet(
+       context: context,
+       text: vm.registerCommand.failure.toString(),
+       textButton: "Try Again",
+       onClick: () => context.pop(),
+      );
     }
-
-
   }
 
   @override
@@ -98,7 +102,7 @@ class _RegisterViewState extends State<RegisterView> {
                           label: "Choose your password",
                           isPassword: true,
                           obscureText: vm.passwordNotVisible,
-                          onTap: vm.tooglePassword,
+                          showPassword: vm.tooglePassword,
                           validator: PasswordValidator.validatePassword,
                         ),
                         AppTextFormFiel(
@@ -106,7 +110,7 @@ class _RegisterViewState extends State<RegisterView> {
                           label: "Confirm your password",
                           isPassword: true,
                           obscureText: vm.confirmPasswordNotVisible,
-                          onTap: vm.toogleConfirmPassword,
+                          showPassword: vm.toogleConfirmPassword,
                           validator: (confirmPassword) =>
                               PasswordValidator.validateConfirmPassword(
                                 confirmPassword,

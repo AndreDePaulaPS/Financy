@@ -18,12 +18,7 @@ class HomeRepositoryImpl implements IHomeRepository{
     return Failure(AppException(mensagem: "Não existe usuário logado"));
   }
 
-  @override
-  Future<Result<void, Exception>> clearSession()async {
-    await _sessionManager.clearSession();
-
-    return Success(null);
-  }
+  
 
 
 }
