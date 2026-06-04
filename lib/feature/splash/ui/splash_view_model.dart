@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
-import 'package:flutter_finance_app/core/session/domain/usecases/session_usecase.dart';
+import 'package:flutter_finance_app/core/session/domain/usecases/restore_session_usecase.dart';
 import 'package:flutter_finance_app/shared/command/command.dart';
 import 'package:flutter_finance_app/shared/result/result.dart';
 
