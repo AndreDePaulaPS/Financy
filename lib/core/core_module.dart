@@ -5,7 +5,7 @@ import 'package:flutter_finance_app/core/network/auth_interceptor.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_local_storage.dart';
 import 'package:flutter_finance_app/core/local_storage/local_storage_impl.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
-import 'package:flutter_finance_app/core/session/domain/usecases/session_usecase.dart';
+import 'package:flutter_finance_app/core/session/domain/usecases/restore_session_usecase.dart';
 import 'package:flutter_finance_app/core/session/session_manager.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get_it/get_it.dart';
