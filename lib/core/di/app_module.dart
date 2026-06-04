@@ -1,7 +1,7 @@
 import 'package:flutter_finance_app/core/core_module.dart';
-import 'package:flutter_finance_app/feature/auth/auth_module.dart';
-import 'package:flutter_finance_app/feature/home/home_module.dart';
-import 'package:flutter_finance_app/feature/splash/splash_module.dart';
+import 'package:flutter_finance_app/features/auth/auth_module.dart';
+import 'package:flutter_finance_app/features/home/home_module.dart';
+import 'package:flutter_finance_app/features/splash/splash_module.dart';
 import 'package:get_it/get_it.dart';
 
 class AppModule {
