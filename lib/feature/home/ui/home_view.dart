@@ -41,7 +41,7 @@ class _HomeViewState extends State<HomeView> {
             ElevatedButton(onPressed: () async {
               await vm.clearSession();
               if(!context.mounted) return;
-              context.go(AppRouterKey.auth);
+              context.go(AppRouterKey.login);
 
               
             }, child: Text("Logoff"))

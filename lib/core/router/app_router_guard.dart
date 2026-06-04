@@ -11,9 +11,10 @@ class AppRouterGuard {
     final hasSession = sessionManager.loadSession() != null;
 
     final isPublic =
-        state.matchedLocation == AppRouterKey.auth ||
+        state.matchedLocation == AppRouterKey.login ||
         state.matchedLocation == AppRouterKey.splash ||
-        state.matchedLocation == AppRouterKey.onboarding;
+        state.matchedLocation == AppRouterKey.onboarding ||
+        state.matchedLocation == AppRouterKey.register;
 
     if (!hasSession && !isPublic) {
       return AppRouterKey.splash;

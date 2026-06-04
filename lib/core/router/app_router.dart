@@ -3,6 +3,7 @@ import 'package:flutter_finance_app/core/router/app_router_guard.dart';
 import 'package:flutter_finance_app/core/router/app_router_key.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
 import 'package:flutter_finance_app/feature/auth/ui/login/login_provider.dart';
+import 'package:flutter_finance_app/feature/auth/ui/register/register_provider.dart';
 import 'package:flutter_finance_app/feature/home/ui/home_provider.dart';
 import 'package:flutter_finance_app/feature/onbording/ui/onboarding_view.dart';
 import 'package:flutter_finance_app/feature/splash/ui/splash_provider.dart';
@@ -22,7 +23,8 @@ class AppRouter {
           builder: (context, state) => SplashProvider(),
         ),
         GoRoute(path: AppRouterKey.onboarding, builder: (_, _) => OnboardingView()),
-        GoRoute(path: AppRouterKey.auth, builder: (_, _) => LoginProvider()),
+        GoRoute(path: AppRouterKey.login, builder: (_, _) => LoginProvider()),
+        GoRoute(path: AppRouterKey.register, builder: (_, _) => RegisterProvider()),
         GoRoute(path: AppRouterKey.home, builder: (_, _) => HomeProvider()),
       ],
     );

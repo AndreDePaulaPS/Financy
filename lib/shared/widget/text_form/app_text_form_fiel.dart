@@ -7,6 +7,7 @@ class AppTextFormFiel extends StatelessWidget {
   final String label;
   final String? hintText;
   final String? helperText;
+  final TextStyle? helperStyle;
 
   final TextInputType? keyboardType;
   final TextInputAction textInputAction;
@@ -40,6 +41,7 @@ class AppTextFormFiel extends StatelessWidget {
     required this.label,
     this.hintText,
     this.helperText,
+    this.helperStyle,
     this.keyboardType,
     this.textInputAction = TextInputAction.next,
     this.textCapitalization = TextCapitalization.none,
@@ -91,8 +93,10 @@ class AppTextFormFiel extends StatelessWidget {
         labelText: label,
         hintText: hintText,
         helperText: helperText,
-
+        helperStyle: helperStyle,
         prefixIcon: prefixIcon,
+        helperMaxLines: 2,
+        
 
         suffixIcon: isPassword
             ? IconButton(

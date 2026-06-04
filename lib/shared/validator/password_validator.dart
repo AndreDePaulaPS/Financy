@@ -1,29 +1,38 @@
 class PasswordValidator {
-  PasswordValidator._();
-
-  static String? validate(String? value) {
-    if (value == null || value.trim().isEmpty) {
-      return 'Informe sua senha';
+  static String? validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Password is required';
     }
 
     if (value.length < 8) {
-      return 'A senha deve ter no mínimo 8 caracteres';
+      return 'Password must have at least 8 characters';
     }
 
     if (!RegExp(r'[A-Z]').hasMatch(value)) {
-      return 'A senha deve conter uma letra maiúscula';
-    }
-
-    if (!RegExp(r'[a-z]').hasMatch(value)) {
-      return 'A senha deve conter uma letra minúscula';
+      return 'Password must contain at least 1 uppercase letter';
     }
 
     if (!RegExp(r'[0-9]').hasMatch(value)) {
-      return 'A senha deve conter um número';
+      return 'Password must contain at least 1 number';
     }
 
-    if (!RegExp(r'[!@#$%^&*(),.?":{}|<>]').hasMatch(value)) {
-      return 'A senha deve conter um caractere especial';
+    if (!RegExp(r'[!@#$%^&*(),.?":{}|<>_\-+=~`/\[\]\\]').hasMatch(value)) {
+      return 'Password must contain at least 1 special character';
+    }
+
+    return null;
+  }
+
+  static String? validateConfirmPassword(
+    String? confirmPassword,
+    String password,
+  ) {
+    if (confirmPassword == null || confirmPassword.isEmpty) {
+      return 'Please confirm your password';
+    }
+
+    if (confirmPassword != password) {
+      return 'Passwords do not match';
     }
 
     return null;

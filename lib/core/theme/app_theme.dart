@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_finance_app/core/theme/app_colors.dart';
 
@@ -85,6 +86,13 @@ class AppTheme {
 
         bodyMedium: TextStyle(fontSize: 14, color: AppColors.textSecondary),
       ),
+
+      pageTransitionsTheme: const PageTransitionsTheme(
+      builders: {
+        TargetPlatform.android: CupertinoPageTransitionsBuilder(),
+        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+      },
+    ),
     );
   }
 }

@@ -62,7 +62,7 @@ class _LoginViewState extends State<LoginView> {
                       obscureText: viewModel.isTextNotVisible,
                       isPassword: true,
                       showPassword: viewModel.tooglePassword,
-                      validator: PasswordValidator.validate,
+                      validator: PasswordValidator.validatePassword,
                     ),
                     GestureDetector(
                       onTap: () {},
@@ -98,7 +98,9 @@ class _LoginViewState extends State<LoginView> {
                           TextSpan(
                             text: "Sign up",
                             style: TextStyle(color: AppColors.greenCard),
-                            recognizer: TapGestureRecognizer()..onTap = () {},
+                            recognizer: TapGestureRecognizer()..onTap = () {
+                              context.go(AppRouterKey.register);
+                            },
                           ),
                         ],
                       ),
