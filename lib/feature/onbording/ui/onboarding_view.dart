@@ -55,7 +55,7 @@ class OnboardingView extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                 AppButton(label: "Get Started", onTap: () => context.go(AppRouterKey.auth),),
+                 AppButton(label: "Get Started", onTap: (){},),
                   RichText(
                     text: TextSpan(
                       children: [
@@ -72,7 +72,7 @@ class OnboardingView extends StatelessWidget {
                             color: AppColors.greenCard,
                             fontSize: 14,
                           ),
-                          recognizer: TapGestureRecognizer()..onTap = () {},
+                          recognizer: TapGestureRecognizer()..onTap = () => context.go(AppRouterKey.auth),
                         ),
                       ],
                     ),

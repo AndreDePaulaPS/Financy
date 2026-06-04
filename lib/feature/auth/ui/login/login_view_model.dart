@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_finance_app/core/session/domain/entities/session.dart';
-import 'package:flutter_finance_app/feature/auth/domain/contract/i_auth_repository.dart';
-import 'package:flutter_finance_app/feature/auth/domain/input/login_input.dart';
+import 'package:flutter_finance_app/feature/auth/domain/login/contract/i_auth_repository.dart';
+import 'package:flutter_finance_app/feature/auth/domain/login/input/login_input.dart';
 import 'package:flutter_finance_app/shared/command/command.dart';
 
 class LoginViewModel extends ChangeNotifier {

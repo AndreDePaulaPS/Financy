@@ -3,10 +3,10 @@ import 'package:flutter_finance_app/core/session/data/mapper/session_mapper.dart
 import 'package:flutter_finance_app/core/session/domain/contracts/i_local_storage.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
 import 'package:flutter_finance_app/core/session/domain/entities/session.dart';
-import 'package:flutter_finance_app/feature/auth/data/mapper/login_mapper_dto.dart';
-import 'package:flutter_finance_app/feature/auth/domain/contract/i_auth_repository.dart';
-import 'package:flutter_finance_app/feature/auth/domain/contract/i_auth_service.dart';
-import 'package:flutter_finance_app/feature/auth/domain/input/login_input.dart';
+import 'package:flutter_finance_app/feature/auth/data/login/mapper/login_mapper_dto.dart';
+import 'package:flutter_finance_app/feature/auth/domain/login/contract/i_auth_repository.dart';
+import 'package:flutter_finance_app/feature/auth/domain/login/contract/i_auth_service.dart';
+import 'package:flutter_finance_app/feature/auth/domain/login/input/login_input.dart';
 import 'package:flutter_finance_app/shared/result/result.dart';
 
 class AuthRepositoryImpl implements IAuthRepository{
