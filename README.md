@@ -177,10 +177,10 @@ Características:
 
 ### Foundation
 
-* [x] Arquitetura base
-* [x] DI
-* [x] Result Pattern
-* [x] Command Pattern
+* [ ] Arquitetura base
+* [ ] DI
+* [ ] Result Pattern
+* [ ] Command Pattern
 * [ ] SessionManager
 
 ### Auth
