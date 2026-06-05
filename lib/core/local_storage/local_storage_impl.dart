@@ -1,4 +1,4 @@
-import 'package:flutter_finance_app/core/session/domain/contracts/i_local_storage.dart';
+import 'package:flutter_finance_app/core/session/domain/contract/i_local_storage.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class LocalStorageImpl implements ILocalStorage{

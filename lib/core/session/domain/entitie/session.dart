@@ -1,4 +1,4 @@
-import 'package:flutter_finance_app/core/session/domain/entities/user_session.dart';
+import 'package:flutter_finance_app/core/session/domain/entitie/user_session.dart';
 
 class Session {
   final String token;

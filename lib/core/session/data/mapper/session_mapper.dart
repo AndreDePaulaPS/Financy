@@ -1,6 +1,6 @@
 import 'package:flutter_finance_app/core/session/data/dto/session_dto.dart';
 import 'package:flutter_finance_app/core/session/data/mapper/user_session_mapper.dart';
-import 'package:flutter_finance_app/core/session/domain/entities/session.dart';
+import 'package:flutter_finance_app/core/session/domain/entitie/session.dart';
 
 extension SessionDtoMapper on SessionDto {
   Session toDomain() {

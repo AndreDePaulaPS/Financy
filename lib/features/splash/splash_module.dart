@@ -1,6 +1,6 @@
 import 'package:flutter_finance_app/core/di/i_feature_module.dart';
-import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
-import 'package:flutter_finance_app/core/session/domain/usecases/restore_session_usecase.dart';
+import 'package:flutter_finance_app/core/session/domain/contract/i_session_manager.dart';
+import 'package:flutter_finance_app/core/session/domain/usecase/restore_session_usecase.dart';
 import 'package:flutter_finance_app/features/splash/ui/splash_view_model.dart';
 import 'package:get_it/get_it.dart';
 

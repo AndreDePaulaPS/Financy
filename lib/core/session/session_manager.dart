@@ -1,5 +1,5 @@
-import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
-import 'package:flutter_finance_app/core/session/domain/entities/session.dart';
+import 'package:flutter_finance_app/core/session/domain/contract/i_session_manager.dart';
+import 'package:flutter_finance_app/core/session/domain/entitie/session.dart';
 
 class SessionManager implements ISessionManager {
   Session? _session;

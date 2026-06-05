@@ -1,4 +1,4 @@
-import 'package:flutter_finance_app/core/session/domain/entities/session.dart';
+import 'package:flutter_finance_app/core/session/domain/entitie/session.dart';
 
 abstract interface class ISessionManager {
   Future<void> save(Session session);

@@ -1,6 +1,6 @@
 import 'package:flutter_finance_app/core/network/app_http_client.dart';
-import 'package:flutter_finance_app/core/session/domain/contracts/i_local_storage.dart';
-import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
+import 'package:flutter_finance_app/core/session/domain/contract/i_local_storage.dart';
+import 'package:flutter_finance_app/core/session/domain/contract/i_session_manager.dart';
 import 'package:flutter_finance_app/features/auth/data/login/repository/auth_repository_impl.dart';
 import 'package:flutter_finance_app/features/auth/data/login/service/auth_service_impl.dart';
 import 'package:flutter_finance_app/features/auth/data/register/repository/register_repository_impl.dart';

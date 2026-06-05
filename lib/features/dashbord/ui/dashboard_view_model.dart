@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
-import 'package:flutter_finance_app/core/session/domain/entities/session.dart';
-import 'package:flutter_finance_app/core/session/domain/usecases/clean_session_usecase.dart';
+import 'package:flutter_finance_app/core/session/domain/entitie/session.dart';
+import 'package:flutter_finance_app/core/session/domain/usecase/clean_session_usecase.dart';
 import 'package:flutter_finance_app/features/dashbord/domain/contract/i_dashboard_repository.dart';
 import 'package:flutter_finance_app/shared/command/command.dart';
 import 'package:flutter_finance_app/shared/result/result.dart';

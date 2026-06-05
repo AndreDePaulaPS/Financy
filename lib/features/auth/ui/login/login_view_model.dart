@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_finance_app/core/session/domain/entities/session.dart';
+import 'package:flutter_finance_app/core/session/domain/entitie/session.dart';
 import 'package:flutter_finance_app/features/auth/domain/login/contract/i_auth_repository.dart';
 import 'package:flutter_finance_app/features/auth/domain/login/input/login_input.dart';
 import 'package:flutter_finance_app/shared/command/command.dart';
