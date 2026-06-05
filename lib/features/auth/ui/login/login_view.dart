@@ -84,7 +84,7 @@ class _LoginViewState extends State<LoginView> {
                                 await viewModel.login();
                                 if (!context.mounted) return;
                                 if (viewModel.loginCommand.isSuccess) {
-                                  context.go(AppRouterKey.home);
+                                  context.go(AppRouterKey.dashboard);
                                 }
                               }
                             },

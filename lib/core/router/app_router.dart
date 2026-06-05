@@ -29,7 +29,7 @@ class AppRouter {
         GoRoute(path: AppRouterKey.register, builder: (_, _) => RegisterProvider()),
         GoRoute(path: AppRouterKey.forgotPassword, builder: (_, _) => ResetPasswordProvider()),
         GoRoute(path: AppRouterKey.checkEmail, builder: (_, _) => CheckEmailView()),
-        GoRoute(path: AppRouterKey.home, builder: (_, _) => DashboadProvider()),
+        GoRoute(path: AppRouterKey.dashboard, builder: (_, _) => DashboadProvider()),
       ],
     );
   }

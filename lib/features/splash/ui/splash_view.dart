@@ -30,7 +30,7 @@ class _SplashViewState extends State<SplashView> {
      if (!mounted) return;
 
       if (viewModel.isLogged) {
-        context.go(AppRouterKey.home);
+        context.go(AppRouterKey.dashboard);
       } else {
         context.go(AppRouterKey.onboarding);
       }

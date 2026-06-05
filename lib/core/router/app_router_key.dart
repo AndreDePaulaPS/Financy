@@ -7,5 +7,5 @@ class AppRouterKey {
   static String forgotPassword = "/auth/forgot-password";
   static String checkEmail = "/auth/forgot-password/check-email";
 
-  static String home = "/home";
+  static String dashboard = "/dashboard";
 }
