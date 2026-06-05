@@ -65,7 +65,9 @@ class _LoginViewState extends State<LoginView> {
                       validator: PasswordValidator.validatePassword,
                     ),
                     GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        context.push(AppRouterKey.forgotPassword);
+                      },
                       child: Text(
                         "Forgot Password?",
                         textAlign: TextAlign.end,

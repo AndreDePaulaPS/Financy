@@ -14,6 +14,8 @@ class AppRouterGuard {
         state.matchedLocation == AppRouterKey.login ||
         state.matchedLocation == AppRouterKey.splash ||
         state.matchedLocation == AppRouterKey.onboarding ||
+        state.matchedLocation == AppRouterKey.forgotPassword ||
+        state.matchedLocation == AppRouterKey.checkEmail ||
         state.matchedLocation == AppRouterKey.register;
 
     if (!hasSession && !isPublic) {

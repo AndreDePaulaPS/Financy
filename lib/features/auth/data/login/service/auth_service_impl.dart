@@ -5,10 +5,10 @@ import 'package:flutter_finance_app/features/auth/data/login/dto/auth_request_dt
 import 'package:flutter_finance_app/features/auth/domain/login/contract/i_auth_service.dart';
 import 'package:flutter_finance_app/shared/result/result.dart';
 
-class AuthService implements IAuthService {
+class AuthServiceImpl implements IAuthService {
   final Dio _dio;
 
-  AuthService(this._dio);
+  AuthServiceImpl(this._dio);
 
   @override
   Future<Result<SessionDto, Exception>> login(AuthRequestDto auth) async {
