@@ -6,7 +6,7 @@ import 'package:flutter_finance_app/features/auth/ui/reset_password/check_email_
 import 'package:flutter_finance_app/features/auth/ui/reset_password/reset_password_provider.dart';
 import 'package:flutter_finance_app/features/auth/ui/login/login_provider.dart';
 import 'package:flutter_finance_app/features/auth/ui/register/register_provider.dart';
-import 'package:flutter_finance_app/features/home/ui/home_provider.dart';
+import 'package:flutter_finance_app/features/dashbord/ui/dashboad_provider.dart';
 import 'package:flutter_finance_app/features/onboarding/ui/onboarding_view.dart';
 import 'package:flutter_finance_app/features/splash/ui/splash_provider.dart';
 import 'package:go_router/go_router.dart';
@@ -29,7 +29,7 @@ class AppRouter {
         GoRoute(path: AppRouterKey.register, builder: (_, _) => RegisterProvider()),
         GoRoute(path: AppRouterKey.forgotPassword, builder: (_, _) => ResetPasswordProvider()),
         GoRoute(path: AppRouterKey.checkEmail, builder: (_, _) => CheckEmailView()),
-        GoRoute(path: AppRouterKey.home, builder: (_, _) => HomeProvider()),
+        GoRoute(path: AppRouterKey.home, builder: (_, _) => DashboadProvider()),
       ],
     );
   }

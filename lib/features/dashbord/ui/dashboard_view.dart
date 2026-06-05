@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_finance_app/core/router/app_router_key.dart';
-import 'package:flutter_finance_app/features/home/ui/home_view_model.dart';
+import 'package:flutter_finance_app/features/dashbord/ui/dashboard_view_model.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
-class HomeView extends StatefulWidget {
-  const HomeView({super.key});
+class DashboardView extends StatefulWidget {
+  const DashboardView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
+  State<DashboardView> createState() => _DashboardView();
 }
 
-class _HomeViewState extends State<HomeView> {
-  late HomeViewModel homeVM;
+class _DashboardView extends State<DashboardView> {
+  late DashboardViewModel homeVM;
 
   @override
   void initState() {
     super.initState();
-    homeVM = context.read<HomeViewModel>();
+    homeVM = context.read<DashboardViewModel>();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       init();
     },);
@@ -29,7 +29,7 @@ class _HomeViewState extends State<HomeView> {
   
   @override
   Widget build(BuildContext context) {
-    final vm = context.watch<HomeViewModel>();
+    final vm = context.watch<DashboardViewModel>();
     return Scaffold(
       appBar:  AppBar(title: Text("Home")),
       body: Center(

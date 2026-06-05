@@ -1,13 +1,13 @@
 import 'package:flutter_finance_app/shared/exception/app_exception.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
 import 'package:flutter_finance_app/core/session/domain/entities/session.dart';
-import 'package:flutter_finance_app/features/home/domain/contract/i_home_repository.dart';
+import 'package:flutter_finance_app/features/dashbord/domain/contract/i_dashboard_repository.dart';
 import 'package:flutter_finance_app/shared/result/result.dart';
 
-class HomeRepositoryImpl implements IHomeRepository{
+class DashboardRepositoryImpl implements IDashboardRepository{
   final ISessionManager _sessionManager;
 
-  HomeRepositoryImpl(this._sessionManager);
+  DashboardRepositoryImpl(this._sessionManager);
 
   @override
   Future<Result<Session, Exception>> loadUser() async{

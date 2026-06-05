@@ -1,6 +1,6 @@
 import 'package:flutter_finance_app/core/core_module.dart';
 import 'package:flutter_finance_app/features/auth/auth_module.dart';
-import 'package:flutter_finance_app/features/home/home_module.dart';
+import 'package:flutter_finance_app/features/dashbord/home_module.dart';
 import 'package:flutter_finance_app/features/splash/splash_module.dart';
 import 'package:get_it/get_it.dart';
 

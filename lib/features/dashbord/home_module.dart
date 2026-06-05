@@ -2,9 +2,9 @@ import 'package:flutter_finance_app/core/di/i_feature_module.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_local_storage.dart';
 import 'package:flutter_finance_app/core/session/domain/contracts/i_session_manager.dart';
 import 'package:flutter_finance_app/core/session/domain/usecases/clean_session_usecase.dart';
-import 'package:flutter_finance_app/features/home/data/repository/home_repository_impl.dart';
-import 'package:flutter_finance_app/features/home/domain/contract/i_home_repository.dart';
-import 'package:flutter_finance_app/features/home/ui/home_view_model.dart';
+import 'package:flutter_finance_app/features/dashbord/data/repository/dashboard_repository_impl.dart';
+import 'package:flutter_finance_app/features/dashbord/domain/contract/i_dashboard_repository.dart';
+import 'package:flutter_finance_app/features/dashbord/ui/dashboard_view_model.dart';
 import 'package:get_it/get_it.dart';
 
 class HomeModule implements IFeatureModule {
@@ -15,8 +15,8 @@ class HomeModule implements IFeatureModule {
   @override
   void register() {
     _getIt.registerLazySingleton<CleanSessionUsecase>(() => CleanSessionUsecase(_getIt<ISessionManager>(), _getIt<ILocalStorage>()),);
-    _getIt.registerLazySingleton<IHomeRepository>(() => HomeRepositoryImpl(_getIt<ISessionManager>()),);
-    _getIt.registerFactory<HomeViewModel>(() => HomeViewModel(_getIt<IHomeRepository>(), _getIt<CleanSessionUsecase>(),));
+    _getIt.registerLazySingleton<IDashboardRepository>(() => DashboardRepositoryImpl(_getIt<ISessionManager>()),);
+    _getIt.registerFactory<DashboardViewModel>(() => DashboardViewModel(_getIt<IDashboardRepository>(), _getIt<CleanSessionUsecase>(),));
   }
 
 }
