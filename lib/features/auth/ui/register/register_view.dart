@@ -26,7 +26,7 @@ class _RegisterViewState extends State<RegisterView> {
     await vm.register();
     if (!context.mounted) return;
     if (vm.registerCommand.isSuccess) {
-      context.go(AppRouterKey.dashboard);
+      context.go(AppRouterKey.main);
       return;
     }
     if (vm.registerCommand.isFailure) {

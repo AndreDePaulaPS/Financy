@@ -23,7 +23,7 @@ class AppRouterGuard {
     }
 
     if (hasSession && isPublic) {
-      return AppRouterKey.dashboard;
+      return AppRouterKey.main;
     }
 
     return null;

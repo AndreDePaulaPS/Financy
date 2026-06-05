@@ -7,10 +7,10 @@ import 'package:flutter_finance_app/features/dashbord/domain/contract/i_dashboar
 import 'package:flutter_finance_app/features/dashbord/ui/dashboard_view_model.dart';
 import 'package:get_it/get_it.dart';
 
-class HomeModule implements IFeatureModule {
+class DashboardModule implements IFeatureModule {
   final GetIt _getIt;
 
-  HomeModule(this._getIt);
+  DashboardModule(this._getIt);
 
   @override
   void register() {
