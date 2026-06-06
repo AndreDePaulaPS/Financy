@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_finance_app/core/theme/app_colors.dart';
 import 'package:flutter_finance_app/features/dashbord/ui/dashboard_view_model.dart';
 import 'package:flutter_finance_app/features/dashbord/ui/widget/card_widget.dart';
+import 'package:flutter_finance_app/shared/extension/datatime_extension.dart';
 import 'package:flutter_finance_app/shared/widget/skeleton/app_skeleton.dart';
 import 'package:flutter_finance_app/shared/widget/transaction_list/app_transaction_list.dart';
 import 'package:provider/provider.dart';
@@ -34,6 +35,7 @@ class _DashboardView extends State<DashboardView> {
     final vm = context.watch<DashboardViewModel>();
     final user = vm.loadUserCommand.success?.user;
     final transaction = vm.dashboardCommand.success;
+    final greeting = DateTime.now().periodOfDay;
     return Scaffold(
 
       backgroundColor: AppColors.white,
@@ -44,7 +46,7 @@ class _DashboardView extends State<DashboardView> {
               clipBehavior: Clip.none,
               children: [
                 Container(
-                  height: 220,
+                  height: 240,
                   width: double.infinity,
                   padding: const EdgeInsets.fromLTRB(24, 32, 24, 0),
                   decoration: const BoxDecoration(
@@ -58,9 +60,9 @@ class _DashboardView extends State<DashboardView> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(height: 10,),
-                      const Text(
-                        'Good afternoon,',
-                        style: TextStyle(color: Colors.white70),
+                      Text(
+                        greeting,
+                        style: const TextStyle(color: Colors.white70),
                       ),
                       Text(
                         "${user?.name}",

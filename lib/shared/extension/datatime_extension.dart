@@ -37,13 +37,13 @@ extension DateTimeGreetingExtension on DateTime {
     final hour = this.hour;
 
     if (hour >= 5 && hour < 12) {
-      return 'Morning';
+      return 'Good Morning';
     }
 
     if (hour >= 12 && hour < 18) {
-      return 'Afternoon';
+      return 'Good Afternoon';
     }
 
-    return 'Evening';
+    return 'Good Evening';
   }
 }

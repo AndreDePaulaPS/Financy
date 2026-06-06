@@ -24,7 +24,7 @@ class DashboardViewModel extends ChangeNotifier {
   }
 
   Future<void> init() async {
-    Future.wait([loadUser(), loadDashboard()]);
+   await Future.wait([loadUser(), loadDashboard()]);
   }
 
   Future<void> loadUser() async {
