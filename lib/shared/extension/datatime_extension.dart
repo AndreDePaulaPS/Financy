@@ -28,4 +28,22 @@ extension DateTimeExtension on DateTime {
         '${month.toString().padLeft(2, '0')}/'
         '$year';
   }
+
+  
+}
+
+extension DateTimeGreetingExtension on DateTime {
+  String get periodOfDay {
+    final hour = this.hour;
+
+    if (hour >= 5 && hour < 12) {
+      return 'Morning';
+    }
+
+    if (hour >= 12 && hour < 18) {
+      return 'Afternoon';
+    }
+
+    return 'Evening';
+  }
 }

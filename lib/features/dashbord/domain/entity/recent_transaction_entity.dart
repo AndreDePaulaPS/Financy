@@ -3,7 +3,7 @@ class RecentTransactionEntity {
   final String title;
   final double amount;
   final String category;
-  final String date;
+  final DateTime date;
 
   RecentTransactionEntity({
     required this.id,

@@ -8,7 +8,7 @@ extension RecenteTransactionMapper on RecenteTransactionDto {
       title: title,
       amount: amount,
       category: category,
-      date: date,
+      date: DateTime.parse(date),
     );
   }
 }
