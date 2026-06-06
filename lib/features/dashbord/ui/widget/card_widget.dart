@@ -25,9 +25,19 @@ class CardWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Total Balance', style: TextStyle(color: AppColors.white)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('Total Balance', style: TextStyle(color: AppColors.white)),
+              GestureDetector(
+                child: Icon(Icons.more_horiz, color: Colors.white),
+                onTap: () {
+                },
+              ),
+            ],
+          ),
           Text(
-            "\$${dashboard?.balance.toStringAsFixed(2)}",
+            "\$ ${dashboard?.balance.toStringAsFixed(2)}",
             style: TextStyle(
               color: AppColors.white,
               fontSize: 30,
@@ -35,17 +45,16 @@ class CardWidget extends StatelessWidget {
             ),
           ),
           Spacer(),
-          
+
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              
               Row(
                 spacing: 4,
                 children: [
-                  Icon(Icons.arrow_circle_down, color: AppColors.white,),
+                  Icon(Icons.arrow_circle_down, color: AppColors.white),
                   Text(
-                    'Income\n\$${dashboard?.income.toStringAsFixed(2)}',
+                    'Income\n\$ ${dashboard?.income.toStringAsFixed(2)}',
                     style: TextStyle(color: AppColors.white),
                   ),
                 ],
@@ -53,9 +62,9 @@ class CardWidget extends StatelessWidget {
               Row(
                 spacing: 4,
                 children: [
-                  Icon(Icons.arrow_circle_up, color: AppColors.white,),
+                  Icon(Icons.arrow_circle_up, color: AppColors.white),
                   Text(
-                    'Expenses\n\$${dashboard?.expenses.toStringAsFixed(2)}',
+                    'Expenses\n\$ ${dashboard?.expenses.toStringAsFixed(2)}',
                     style: TextStyle(color: AppColors.white),
                   ),
                 ],

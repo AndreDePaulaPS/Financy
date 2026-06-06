@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_finance_app/core/router/app_router_key.dart';
 import 'package:flutter_finance_app/core/theme/app_colors.dart';
 import 'package:flutter_finance_app/features/splash/ui/splash_view_model.dart';
-import 'package:flutter_finance_app/shared/widget/backgroud_degrade.dart';
+import 'package:flutter_finance_app/shared/widget/backgroud_degrade/backgroud_degrade.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
