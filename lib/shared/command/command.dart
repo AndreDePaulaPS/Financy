@@ -5,6 +5,8 @@ import 'package:flutter_finance_app/shared/result/result.dart';
 class Command<S, E extends Exception> extends ChangeNotifier {
   ECommandState _state = ECommandState.idle;
 
+  bool _disposed = false;
+
   S? _success;
 
   S? get success => _success;
@@ -17,6 +19,11 @@ class Command<S, E extends Exception> extends ChangeNotifier {
   bool get isSuccess => _state == ECommandState.success;
   bool get isFailure => _state == ECommandState.failure;
 
+  @override
+  void dispose() {
+    _disposed = true;
+    super.dispose();
+  }
   
 
 
@@ -42,7 +49,7 @@ class Command<S, E extends Exception> extends ChangeNotifier {
         _failure = failure;
         
       },);
-    notifyListeners();  
+    if (!_disposed) notifyListeners(); 
   }
 
   
