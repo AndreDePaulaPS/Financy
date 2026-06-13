@@ -19,12 +19,7 @@ class Command<S, E extends Exception> extends ChangeNotifier {
   bool get isSuccess => _state == ECommandState.success;
   bool get isFailure => _state == ECommandState.failure;
 
-  @override
-  void dispose() {
-    _disposed = true;
-    super.dispose();
-  }
-  
+ 
 
 
   Future<void> execute(Future<Result<S, E>> Function() action)async{
@@ -42,14 +37,16 @@ class Command<S, E extends Exception> extends ChangeNotifier {
       success: (success) {
         _state = ECommandState.success;
         _success = success;
+        notifyListeners();
+        return;
         
       }, 
       failure: (failure) {
         _state = ECommandState.failure;
         _failure = failure;
-        
+        notifyListeners();
+        return;
       },);
-    if (!_disposed) notifyListeners(); 
   }
 
   

@@ -19,7 +19,7 @@ class SessionDto {
     final user = json["user"] is String? jsonDecode(json["user"]): json["user"];
 
     return SessionDto(
-      token: json["token"],
+      token: json["accessToken"],
       refreshToken: json["refreshToken"],
       expiresIn: json["expiresIn"],
       user: UserSessionDto.fromJson(user),

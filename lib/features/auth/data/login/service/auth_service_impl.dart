@@ -19,7 +19,7 @@ class AuthServiceImpl implements IAuthService {
         return Success(SessionDto.fromJson(response.data));
       }
       return Failure(AppException(mensagem: response.data));
-    } on DioException catch (e) {
+    } catch (e) {
       return Failure(AppException(mensagem: e.toString()));
     }
   }

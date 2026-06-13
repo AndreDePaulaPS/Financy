@@ -9,7 +9,6 @@ class UserSessionDto {
   final String email;
   final String avatarUrl;
   final bool premium;
-  final List<ERoles> roles;
 
   UserSessionDto({
     required this.id,
@@ -17,7 +16,6 @@ class UserSessionDto {
     required this.email,
     required this.avatarUrl,
     required this.premium,
-    required this.roles,
   });
 
   Map<String, dynamic> toJson() => {
@@ -26,7 +24,7 @@ class UserSessionDto {
         "email": email,
         "avatarUrl": avatarUrl,
         "premium": premium,
-        "roles": roles.map((e) => e.value,).toList(),
+        // "roles": roles.map((e) => e.value,).toList(),
       };
 
   factory UserSessionDto.fromJson(Map<String, dynamic> json) {
@@ -36,7 +34,7 @@ class UserSessionDto {
       email: json["email"],
       avatarUrl: json["avatarUrl"],
       premium: json["premium"],
-      roles:(json["roles"] as List).map((e) =>(e as String).toRole(),).toList(),
+      // roles:(json["roles"] as List).map((e) =>(e as String).toRole(),).toList(),
     );
   }
 

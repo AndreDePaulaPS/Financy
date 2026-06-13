@@ -9,7 +9,7 @@ extension UserSessionDtoMapper on UserSessionDto {
       email: email,
       avatarUrl: avatarUrl,
       premium: premium,
-      roles: roles,
+      // roles: roles,
     );
   }
 }
@@ -22,7 +22,7 @@ extension UserSessionEntityMapper on UserSession {
       email: email,
       avatarUrl: avatarUrl,
       premium: premium,
-      roles: roles,
+      // roles: roles,
     );
   }
 }
