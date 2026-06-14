@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:flutter_finance_app/shared/enum/e_roles.dart';
-import 'package:flutter_finance_app/shared/extension/e_roles_extension.dart';
+// import 'package:flutter_finance_app/shared/enum/e_roles.dart';
+// import 'package:flutter_finance_app/shared/extension/e_roles_extension.dart';
 
 class UserSessionDto {
   final String id;
@@ -32,7 +32,7 @@ class UserSessionDto {
       id: json["id"],
       name: json["name"],
       email: json["email"],
-      avatarUrl: json["avatarUrl"],
+      avatarUrl: json["avatarUrl"] ?? '',
       premium: json["premium"],
       // roles:(json["roles"] as List).map((e) =>(e as String).toRole(),).toList(),
     );

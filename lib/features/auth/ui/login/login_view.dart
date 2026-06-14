@@ -86,6 +86,17 @@ class _LoginViewState extends State<LoginView> {
                                 if (viewModel.loginCommand.isSuccess) {
                                   context.go(AppRouterKey.main);
                                 }
+                                if (viewModel.loginCommand.isFailure){
+                                  showDialog(context: context, builder: (context) => 
+                                  AlertDialog(
+                                    content: Text(viewModel.loginCommand.failure.toString()),
+                                    actions: [
+                                      TextButton(onPressed: (){
+                                        context.pop();
+                                      }, child: Text("OK"))
+                                    ],
+                                  ),);
+                                }
                               }
                             },
                           ),

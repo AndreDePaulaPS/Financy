@@ -28,7 +28,7 @@ class SessionDto {
 
   Map<String, dynamic> toJson() {
     return {
-      "token": token,
+      "accessToken": token,
       "refreshToken": refreshToken,
       "expiresIn": expiresIn,
       "user": user.json,
